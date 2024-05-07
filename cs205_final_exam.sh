@@ -12,11 +12,11 @@
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called best_pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way best_pokemon.dat is formatted.
 
 #!/bin/bash
-best_pokemon=$1
+filename=$1
 
-total=$(awk 'END{print NR}' $best_pokemon)
-avg_hp=$(awk '{sum += $3} END {print sum / NR}' $best_pokemon)
-avg_attack=$(awk '{sum += $4} END {print sum / NR}' $best_pokemon)
+total=$(awk 'END{print NR}' $filename)
+avg_hp=$(awk '{sum += $3} END {print sum / NR}' $filename)
+avg_attack=$(awk '{sum += $4} END {print sum / NR}' $filename)
 
 echo "======= SUMMARY OF $best_pokemon.dat ======"
 echo "# Total Pokemon: $total"
